@@ -9,3 +9,7 @@
 #### Module 5:
 * Adding the Static Files to the `wwwroot` folder of the application.
 * Serving the Static Files with the `app.UseFileServer()` call from the `Microsoft.AspNetCore.StaticFiles` Middleware.
+
+#### Module 6:
+* Implementing and Understanding Error Handlers for Development and Production Envs.
+* Using the `app.UseExceptionHandler()` to set a Production Custom Error Page.
