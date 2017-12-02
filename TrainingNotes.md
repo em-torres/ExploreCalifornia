@@ -40,3 +40,27 @@ var configuration = new ConfigurationBuilder()
 
 ---------------------
 ## Chapter 2: The MVC Pattern
+#### Module 1:
+* Introduction to MVC (Model-View-Controller) pattern
+* Introduction ASP.NET MVC Framework
+
+#### Module 2:
+* Using the `UseMvc()` method to install the MVC package on the application.
+* Inserting the routing as second parameter of the `UseMvc()` method.
+* Adding the `UseMVC()` method to the `ConfigureServices` method.
+
+#### Module 3:
+* Handling Requests with Controllers and separate them in their own folder.
+* Added new MVC Controller Class to the Controllers folder.
+* In ASP Controllers are containers for actions since every method in the controller class is an action.
+* Controllers classes not necessarily need to derive from the Controller class.
+* On the Controllers classes we will be returning `Action Results Objects`.
+* We can also send `Content Results` to the controller.
+
+#### Module 4:
+* Controller Actions are just methods and we can pass data through paramaters on the method.
+* The parameter `id` in the `Post` method of the **Blog Controller** is linked to the `routes -> Default -> {id?}` parameter we defined in the `Configure Method`.
+* We learnt to catch the value on the router to the Controller.
+* We can use a query string (`?id=`) to achieve the same result. This feature is called **Model Binding** and can be used to populate entire objects.
+
+#### Module 5:

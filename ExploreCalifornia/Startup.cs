@@ -36,6 +36,9 @@ namespace ExploreCalifornia
             {
                 EnableDeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:EnableDeveloperExceptions")
             });
+
+            // Adding the MVC framework to the configuration of the app.
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +60,12 @@ namespace ExploreCalifornia
                     throw new Exception("ERROR!");
 
                 await next();
+            });
+
+            // Calling the MVC Framework
+            app.UseMvc(routes => 
+            {
+                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
             });
 
             // Using the `Microsoft.AspNetCore.StaticFiles` to serve static files
