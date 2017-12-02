@@ -65,7 +65,7 @@ namespace ExploreCalifornia
             // Calling the MVC Framework
             app.UseMvc(routes => 
             {
-                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id:int?}");
             });
 
             // Using the `Microsoft.AspNetCore.StaticFiles` to serve static files
