@@ -64,3 +64,14 @@ var configuration = new ConfigurationBuilder()
 * We can use a query string (`?id=`) to achieve the same result. This feature is called **Model Binding** and can be used to populate entire objects.
 
 #### Module 5:
+* We can register as many routes as we want.
+* We added the type to the Blogs Route expecting a value.
+
+#### Module 6:
+* Cuztomizing application's URL's
+* Implementing Global Routes and Routing approach
+
+---------------------
+## Chapter 3: Render HTML with Views
+#### Module 1:
+
