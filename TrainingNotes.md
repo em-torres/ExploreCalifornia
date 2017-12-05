@@ -74,4 +74,16 @@ var configuration = new ConfigurationBuilder()
 ---------------------
 ## Chapter 3: Render HTML with Views
 #### Module 1:
+* A **Razor** file is an ASP.NET programming syntax used to create dynamic web pages with C# or VB.NET. It's characterized by the `.cshtml` or `.vbhtml` extensions files (A mix of HTML and C# or Visual Basic).
+* Thew `View()` method in the controllers allow ASP.NET to render an HTML file in the browser.
+* It looks in the **/Views/[controller_name]** or **/Vies/Shared** folders for a `.cshtml` file with the name of the method in the controller.
+* We created a Home inside a Views folder, sent the `index.html` file and changed its name to `index.cshtml`.
+* `.cshtml` extension belongs to HTML files with C# code on it.
 
+#### Module 2:
+* To add a code in **Razor** Syntax just add the `@` symbol followed by the language code (C# or VB) you want to add.
+* We added the actual year to the index.
+* The real power of **Razor** lies in the HTML Helpers (we can make entire sections of dynamic HTML with a single method call).
+* The `@Html.ActionLink` helper will be the most used to generate anchortypes based on the controller and action name. It receives 3 parameters: _the text to show in the link_, _the name of the action to be linked_ and the third one is the _name of the controller_.
+* The `ActionLink` helper has another overload that accepts 2 parameters: _a route data object_ and an _html attribute object_.
+* The `@Url.Action` helper unlike the `Action Link` method, only renders the value of the URL itself and no additional HTML.
