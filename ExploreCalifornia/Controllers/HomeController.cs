@@ -13,8 +13,8 @@ namespace ExploreCalifornia.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return new ContentResult { Content = "Hello, ASP.NET Core MVC!" };
-            // return View();
+            // return new ContentResult { Content = "Hello, ASP.NET Core MVC!" };
+            return View();
         }
     }
 }

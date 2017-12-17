@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using ExploreCalifornia.Models;
 
 namespace ExploreCalifornia
 {
@@ -31,6 +32,10 @@ namespace ExploreCalifornia
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // A transient for the application to recognize the SpecialsDataContext Model to format the MonthlySpecialsViewComponents
+            services.AddTransient<SpecialsDataContext>();
+            // A transient for the application to recognize the FormattingService Model to format the Views
+            services.AddTransient<FormattingService>();
             // A transient to be used as a instance configuration every time it's requested for the FeaturesToggle Class
             services.AddTransient<FeatureToggles>(x => new FeatureToggles
             {
