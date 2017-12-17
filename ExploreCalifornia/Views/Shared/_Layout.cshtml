@@ -65,17 +65,24 @@
       }
   </section>
   <div id="contentWrapper">
-  <section id="mainContent">
-    @RenderBody()
-  </section>
+    <section id="mainContent">
+        @RenderBody()
+    </section>
     <aside id="secondaryContent">
-        <div id="specials" class="callOut">
-            @await (Component.InvokeAsync<ExploreCalifornia.ViewComponents.MonthlySpecialsViewComponent>())
-        </div>
-        <div id="trivia" class="callOut">
-            <h1>Did You Know?</h1>
-            <p>California produces over 17 million gallons of wine each year!</p>
-        </div>
+        @if (IsSectionDefined("secondaryContent"))
+        {
+            @RenderSection("secondaryContent", false);
+        }
+        else
+        {
+            <div id="specials" class="callOut">
+                @await (Component.InvokeAsync<ExploreCalifornia.ViewComponents.MonthlySpecialsViewComponent>())
+            </div>
+            <div id="trivia" class="callOut">
+                <h1>Did You Know?</h1>
+                <p>California produces over 17 million gallons of wine each year!</p>
+            </div>
+        }
     </aside>
   </div>
   <footer id="pageFooter">

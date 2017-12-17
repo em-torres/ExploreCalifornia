@@ -132,3 +132,11 @@ var configuration = new ConfigurationBuilder()
 
 #### Module 9:
 * The forte of ViewComponents comes when they can retrieve their own data without Views or Controller knowing where is it coming from.
+* We are going to create a class for the ViewComponent to retrieve the MonthlySpecials data.
+* We used the built-in dependency injection `SpecialsDataContext` to inject it into the component of the View Constructor and added it in the startup for this injection to work.
+* Added the Model data in the `MonthlySpecialsViewComponent`.
+
+#### Challenge:
+* Created new `_SimpleLayout.cshtml` file in the Shared folder with a section and rendering the previous layout.
+* Modified the layouts using the `_Layout.cshtml` file to use the `_SimpleLayout.cshtml`.
+* Set a condition on the `_Layout.cshtml` if the section **secondaryContent** is available, to render that section; else, to render the left side template (with the monthly specials).
