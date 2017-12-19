@@ -51,5 +51,23 @@ namespace ExploreCalifornia.Controllers
             // return new ContentResult { Content = string.Format("Year: {0}; Month: {1}; Key: {2}", year, month, key) };
             return View(post);
         }
+
+        [HttpGet, Route("create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost, Route("create")]
+        public IActionResult Create([Bind("Title", "Body")] Post post)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            post.Author = User.Identity.Name;
+            post.Posted = DateTime.Now;
+
+            return View();
+        }
     }
 }

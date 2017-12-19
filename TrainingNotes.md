@@ -140,3 +140,28 @@ var configuration = new ConfigurationBuilder()
 * Created new `_SimpleLayout.cshtml` file in the Shared folder with a section and rendering the previous layout.
 * Modified the layouts using the `_Layout.cshtml` file to use the `_SimpleLayout.cshtml`.
 * Set a condition on the `_Layout.cshtml` if the section **secondaryContent** is available, to render that section; else, to render the left side template (with the monthly specials).
+
+---------------------
+## Chapter 4: Work with Data
+#### Module 1:
+* Created new controller action called **Create** in the **Blog Controller** with its corresponding Route.
+* Created the view for the **Create** controller action which will contain a Form in a Strongly Typed View by adding the Model at the top of the file.
+* Used the `@Html.BeginForm()` helper to create the form.
+* Used lambda expression to send the name of the form field in order for MVC to return it when rendering.
+* The `@Html.EditorFor()` helper is useful since it will render according to the parameter passed in the Lambda Expression.
+* There's not a Button helper form to create the **Submit** button. We need to create it in HTML.
+
+#### Module 2:
+* Created a new controller action to catch the Post call of the **Create** action using the decorators `HttpPost` for the Post method and `HttpGet` for the Get method.
+* Passed the **Post** Model object in the Post method controller action to differentiate it of the Get method controller action.
+* Created new object to handle the Creating Post Date called `CreatePostRequest` in which we want the users to submit data of the form. This approach has the maintenability problem since we need to maintain a whole new type and copying the code from one instance to another.
+* A better approach is using the `[Bind()]` attribute and telling MVC which parameters of the **Post** Model object to use but has the downsize of refactoring when changing the Model.
+* The simplest way is overriding the fields submitted with the values I want it to be. It's not always the case to use this way but is the simplest in this particular scenario.
+
+#### Module 3:
+* Added the `[Required]` decorator that lives in the `System.ComponentModel.DataAnnotations` namespace on the **Post** model to initiate de Form Validation for our **Create** Form.
+* Added the `[StringLength()]` and `[MinLength]` decorators to control the Max and Min input length of the user. These are only a few of the annotations to validate forms.
+* Added the `@Html.ValidationMessageFor()` helpers for each input in the **Create** View to show the error message of the referred input. Also, added the `@ValidationSummary()` helper to show a summary of the error messages in the form.
+* The errors messages Styles must be defined in a CSS stylesheet by yourself since MVC doesn't have error messages presets. 
+* Added the `[Display()]` decorator in the **Post** model which allow MVC to change the Label of the inputs. The `[DataType()]` decorator allow MVC to change the type of the input field.
+* Used the `ModelState.IsValid` attribute to confirm whether the form is validated or not to create some conditions to stay on the site or go back to the Form.  
